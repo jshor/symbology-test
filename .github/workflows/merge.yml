@@ -17,8 +17,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, macos-latest, ubuntu-latest]
-        node-version: [12, 13, 14, 15]
+        os: [ubuntu-latest]
+        # list only the earliest and latest node versions supported
+        # this makes PR builds more efficient
+        node-version: [12]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
